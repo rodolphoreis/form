@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Formulário de Candidatura de Emprego</title>
+  </head>
+
+  <body>
+    <form id="form">
+      <h1>Formulário de Candidatura de Emprego</h1>
+
+      <p class="principal">
+        Obrigado pelo seu interesse em trabalhar conosco. Por favor, envie sua
+        candidatura preenchendo o Formulário de Candidatura de Emprego.
+      </p>
+
+      <label id="LabelNome" for="name">Nome:</label>
+      <input type="text" id="name" class="required" oninput="nameValidate()" />
+      <span class="span-required">Deve ter no mínimo 3 caracteres</span>
+
+      <label id="LabelEmail" for="email">E-mail:</label>
+      <input type="email" id="email" class="required" />
+      <span class="span-required">Digite um email válido</span>
+
+      <label id="LabelMorada" for="text">Morada:</label>
+      <input type="text" id="endereço" class="required" />
+      <span class="span-required"
+        >Digite seu endereço completo, incluindo o número da casa.</span
+      >
+
+      <div class="radio">
+        <p class="situaçao">Qual a sua situação atual de emprego?</p>
+
+        <input
+          type="radio"
+          id="empregado"
+          name="situacao"
+          value="empregado"
+          required
+        />
+        <label id="LabelEmpregado" for="empregado">Empregado</label>
+
+        <input
+          type="radio"
+          id="desempregado"
+          name="situacao"
+          value="desempregado"
+          required
+        />
+        <label id="LabelDesempregado" for="desempregado">Desempregado</label>
+
+        <input
+          type="radio"
+          id="estudante"
+          name="estudante"
+          value="estudante"
+          required
+        />
+        <label id="LabelEstudante" for="estudante">Estudante</label>
+
+        <input
+          type="radio"
+          id="autonomo"
+          name="autonomo"
+          value="autonomo"
+          required
+        />
+        <label id="LabelAutonomo" for="autonomo">Autônomo</label>
+      </div>
+
+      <label class="pode" for="job">Pode começar imediatamente?</label>
+      <select name="job" id="job">
+        <option value="yes">Sim</option>
+        <option value="no">Não</option>
+      </select>
+
+      <label id="inicio" for="data">Quando pode começar?</label>
+      <input type="date" name="data" id="data" class="inputUser" required />
+
+      <p id="msg">Mensagem:</p>
+      <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+      <button onclick="enviar()" type="submit">Enviar</button>
+    </form>
+  </body>
+  <script>
+    const form = document.getElementById("form");
+    const campos = document.querySelectorAll(".required");
+    const spans = document.querySelectorAll(".span-required");
+
+    function setError(index) {
+      campos[index].style.border = "2px solide #636D5C";
+      campos[index].style.display = "block";
+    }
+    function removeError(index) {
+      campos[index].style.border = "";
+      campos[index].style.display = "none";
+    }
+
+    function nameValidate() {
+      if (campos[0].value.length < 3) {
+        setError(0);
+      } else {
+        console.log("Validado");
+      }
+    }
+  </script>
+</html>
