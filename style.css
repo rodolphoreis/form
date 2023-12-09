@@ -55,6 +55,7 @@ input {
   outline: none;
   transition: 0.3s;
 }
+
 input:focus {
   border-color: #636d5c;
   border: 2px;
@@ -120,7 +121,38 @@ button {
 button:hover {
   background-color: #636d5c;
 }
-
+.pode {
+  margin-top: 27px;
+}
+#LabelEmpregado {
+  margin-left: 15px;
+}
+#empregado {
+  margin-left: -1px;
+  margin-top: 11px;
+}
+#LabelDesempregado {
+  margin-left: 18px;
+  margin-top: 11px;
+}
+#desempregado {
+  margin-left: 1px;
+  margin-top: 11px;
+}
+#LabelEstudante {
+  margin-left: 16px;
+}
+#estudante {
+  margin-top: 11px;
+}
+#LabelAutonomo {
+  margin-left: 42px;
+  margin-top: 11px;
+}
+#autonomo {
+  margin-left: 26px;
+  margin-top: 11px;
+}
 @media (max-width: 500px) {
   body {
     background-image: none;
